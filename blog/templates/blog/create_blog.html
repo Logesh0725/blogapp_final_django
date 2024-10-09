@@ -1,0 +1,68 @@
+{% extends "blog/dashboard.html" %}
+{% block content %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Blog</title>
+    <link rel="stylesheet" href="{% static 'css/create.css' %}">
+    <style>
+        /* Styling for the image preview box */
+        #imagePreview {
+            width: 150px;
+            height: 150px;
+            display: none; /* Initially hide the box */
+            margin-top: 10px;
+        }
+
+        #imagePreview img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="text">Create a New Blog</h2>
+
+    <!-- Add enctype to the form for file uploads -->
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <!-- Render the form fields -->
+        {{ form.as_p }}
+
+        <!-- Image preview box -->
+        <div id="imagePreview">
+            <img id="previewImage" src="#" alt="Image Preview">
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit">Create Blog</button>
+    </form>
+
+    <!-- JavaScript to handle image preview -->
+    <script>
+        document.querySelector('input[type="file"]').addEventListener('change', function(event) {
+            const input = event.target;
+            const imagePreviewDiv = document.getElementById('imagePreview');
+            const previewImage = document.getElementById('previewImage');
+
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+
+                // When the image is loaded, display it in the preview box
+                reader.onload = function(e) {
+                    previewImage.src = e.target.result;
+                    imagePreviewDiv.style.display = 'block'; // Show the preview box
+                }
+
+                // Read the image file as Data URL
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                imagePreviewDiv.style.display = 'none'; // Hide the preview box if no image
+            }
+        });
+    </script>
+</body>
+</html>
+{% endblock content %}

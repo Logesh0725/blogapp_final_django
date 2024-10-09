@@ -1,0 +1,396 @@
+/* General Reset for Cross-Browser Consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #1c1c1c; /* Dark background */
+    background-image: url(https://wallpapercave.com/wp/wp5513644.png);
+    background-size: cover; /* Ensure the background image covers the full area */
+    color: #eaeaea; /* Light text */
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Blog Container */
+h1 {
+    font-size: 2.8rem;
+    color: #eaeaea; /* Light color for title */
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #42a5f5; /* Accent color */
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 55%;
+    height: auto;
+    margin-top: 30px;
+    margin-bottom: 35px;
+}
+
+/* Blog Content */
+p {
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 1.2rem;
+    color: #ccc; /* Softer text color */
+    margin: 20px 80px;
+    letter-spacing: 0.5px;
+}
+
+/* Meta information */
+em {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #888;
+}
+
+/* Like Button */
+form button[name="like"] {
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form button[name="like"]:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Soft shadow */
+}
+
+/* Star Rating Section */
+form label {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    color: #eaeaea;
+}
+
+form button[name="rating"] {
+    padding: 8px 20px;
+    border: none;
+    background-color: #42a5f5; /* Primary blue color */
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form button[name="rating"]:hover {
+    background-color: #1e88e5; /* Darker blue on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Soft shadow */
+}
+
+/* Comment Section */
+h2 {
+    font-size: 1.8rem;
+    margin: 30px 0;
+    text-align: center;
+    color: #eaeaea;
+}
+
+/* Comment List */
+ul {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+    width: 100%;
+}
+
+ul li {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    color: #fff;
+}
+
+ul li small {
+    color: #888;
+}
+
+/* Back Button */
+a {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 30px;
+    background-color: #42a5f5;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+a:hover {
+    background-color: #1e88e5;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+        margin: 20px 10px;
+    }
+
+    form button[name="like"], form button[name="rating"], form button[name="comment"] {
+        padding: 8px 15px;
+        font-size: 1rem;
+    }
+
+    .heart-button {
+        font-size: 1.2rem;
+    }
+
+    .heart-button .fas.fa-heart {
+        font-size: 1.8rem;
+    }
+}
+
+/* Heart Button for Like */
+.heart-button {
+    background: none; /* Remove default button background */
+    border: none; /* Remove default button border */
+    color: #fff; /* White text and icon */
+    font-size: 1.5rem; /* Icon and text size */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between heart icon and text */
+}
+
+.heart-button .fas.fa-heart {
+    font-size: 2rem; /* Size of the heart icon */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+    color: rgb(251, 7, 7); /* Default heart color */
+}
+
+/* When liked, the heart icon turns red */
+.heart-button .liked {
+    color: red;
+}
+
+/* Hover effect for the heart button */
+.heart-button:hover .fas.fa-heart {
+    color: #ff4d4d; /* Lighter red when hovered */
+}
+
+/* Comment Section Styles */
+.comments-section {
+    background-color: #2a2a2a; /* Dark background for the comment section */
+    padding: 20px;
+    border-radius: 8px;
+    width: 900px;
+    margin-top: 30px; /* Space between the blog content and comments section */
+}
+
+.comments-section h2 {
+    color: #eaeaea; /* Light color for the heading */
+    border-bottom: 2px solid #42a5f5; /* Accent border */
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Comments List Styles */
+.comments-list {
+    list-style: none; /* Remove default list style */
+    padding-left: 0; /* Remove default padding */
+    width: 900px;
+}
+
+/* Individual Comment Styles */
+.comment-item {
+    background-color: #3a3a3a; /* Slightly lighter background for comments */
+    padding: 15px;
+    margin: 10px 0; /* Space between individual comments */
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.comment-item:hover {
+    background-color: #454545; /* Change background on hover for interactivity */
+}
+
+.comment-author {
+    font-weight: bold; /* Make the author's name bold */
+    color: #42a5f5; /* Accent color for author name */
+}
+
+.comment-content {
+    color: #eaeaea; /* Light color for comment content */
+    margin: 5px 0; /* Space around content */
+}
+
+.comment-date {
+    color: #888; /* Lighter color for the date */
+    font-style: italic; /* Italicize the date */
+}
+
+/* Comment Form Styles */
+.comment-form {
+    margin-top: 20px; /* Space above the form */
+}
+
+.comment-form-container {
+    background-color: #2a2a2a; /* Dark background for the comment box */
+    padding: 15px;
+    width: 500px;
+    margin-left: 175px;
+    border-radius: 8px; /* Rounded corners */
+    margin-top: 20px; /* Space above the comment section */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+.comment-input-container {
+    display: flex;
+    align-items: center; /* Center the input and button */
+}
+
+.comment-input {
+    flex-grow: 1; /* Make the textarea take the remaining space */
+    height: 60px; /* Fixed height */
+    resize: none; /* Prevent resizing */
+    border: 1px solid #ccc; /* Border around textarea */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding inside the textarea */
+    margin-right: 10px; /* Space between textarea and button */
+    background-color: #fff; /* White background for the textarea */
+    color: #333; /* Text color */
+    transition: border-color 0.3s; /* Transition for the border color */
+}
+
+.comment-input:focus {
+    border-color: #42a5f5; /* Change border color on focus */
+    outline: none; /* Remove outline */
+}
+
+.submit-button {
+    background-color: #42a5f5; /* Button color */
+    border: none; /* No border */
+    color: white; /* Text color */
+    padding: 10px 15px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.submit-button:hover {
+    background-color: #1e88e5; /* Darker blue on hover */
+}
+
+/* Icon for Submit Button */
+.submit-button i {
+    margin-left: 5px; /* Space between icon and text */
+    font-size: 1.1rem; /* Icon size */
+}
+
+
+
+.comments-list {
+    list-style: none; /* Remove default list style */
+    padding-left: 0; /* Remove default padding */
+    width: 80%;
+    margin-left: 90px;
+    justify-content: center;
+}
+
+.comment {
+    display: flex; /* Use flexbox for alignment */
+    margin-bottom: 10px; /* Reduced spacing between comments */
+    border-bottom: 1px solid #ccc; /* Separator line */
+    padding: 8px 0; /* Reduced padding within each comment */
+}
+
+.avatar {
+    width: 32px; /* Smaller size for the avatar */
+    height: 32px; /* Smaller size for the avatar */
+    border-radius: 50%; /* Make the avatar circular */
+    margin-right: 8px; /* Reduced space between avatar and text */
+}
+
+.comment-header {
+    display: flex; /* Align avatar and text horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.comment-info {
+    display: flex; /* Align username and timestamp */
+    flex-direction: column; /* Stack them vertically */
+}
+
+.username {
+    font-weight: bold; /* Bold username */
+    font-size: 14px; /* Adjust font size for a cleaner look */
+}
+
+.timestamp {
+    font-size: 11px; /* Smaller font for timestamp */
+    color: #888; /* Grey color for timestamp */
+}
+
+.comment-body {
+    margin-top: 3px; /* Reduced space above the comment text */
+    font-size: 13px; /* Slightly smaller font for comment text */
+}
+
+.comment-text {
+    font-size: 13px; /* Size of the comment text */
+    margin-top: 3px; /* Space above the comment text */
+}
+
+
+/*rating */
+
+
+.like-dislike-container {
+    display: flex;                  /* Use flexbox for layout */
+    justify-content: center;        /* Center the buttons horizontally */
+    align-items: center;            /* Center the buttons vertically */
+    gap: 10px;                      /* Space between buttons */
+}
+
+.heart-button {
+    display: flex;                  /* Make button a flex container */
+    align-items: center;            /* Center content vertically */
+    border: none;                   /* Remove default border */
+    background: none;               /* Remove default background */
+    cursor: pointer;                /* Change cursor on hover */
+    font-size: 16px;                /* Set a font size */
+    padding: 10px 15px;             /* Add padding for better touch targets */
+    transition: background 0.3s;    /* Smooth background transition */
+}
+
+.heart-button:hover {
+    background: rgba(0, 0, 0, 0.1); /* Light background on hover */
+    border-radius: 5px;             /* Rounded corners on hover */
+}

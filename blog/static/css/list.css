@@ -1,0 +1,158 @@
+/* General Reset for Cross-Browser Consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url(https://wallpapercave.com/wp/wp5513644.png);
+
+    background-color: #1c1c1c;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Page Title */
+h1 {
+    font-size: 2.5rem;
+    color: #fbf7f7;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Blog List Styling */
+ul.blog-list {
+    display: flex;                     /* Use flexbox for horizontal layout */
+    flex-wrap: wrap;                  /* Allow items to wrap onto the next line */
+    justify-content: space-between;   /* Space between items */
+    list-style-type: none;
+    max-width: 1000px;                /* Adjust as needed for max width */
+    width: 100%;
+    padding: 0;
+}
+
+/* Blog Box Styling */
+li.blog-box {
+    background-color: #fff;           /* Background color for the blog box */
+
+    border: 1px solid #ddd;           /* Light border */
+    border-radius: 10px;              /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    margin: 10px;                     /* Space around items */
+    padding: 15px;                    /* Padding inside the box */
+    flex: 1 1 48%;                    /* Allow two items per row with space */
+    min-width: 280px;                 /* Prevent items from getting too small */
+    text-align: center;               /* Center text within the box */
+    overflow: hidden;                 /* Hide overflow content */
+}
+
+
+/* Blog Image Styling */
+.blog-image {
+    max-width: 100%;                  /* Responsive image width */
+    height: auto;                     /* Maintain aspect ratio */
+    border-radius: 5px;               /* Slightly rounded corners for images */
+    margin-bottom: 15px;              /* Space below the image */
+}
+
+/* Blog Title Styling */
+.blog-title {
+    font-size: 22px;                  /* Title font size */
+    color: #34495e;                   /* Title color */
+    margin: 0;                        /* Remove margin */
+}
+
+/* Blog Title Links */
+li.blog-box a {
+    text-decoration: none;             /* Remove underline */
+    color: #007bff;                   /* Link color */
+    font-size: 1.2rem;                /* Link font size */
+    font-weight: bold;                /* Make the link bold */
+    transition: color 0.3s ease;      /* Transition effect for hover */
+}
+
+/* Hover effect for blog items */
+li.blog-box:hover {
+    background-color: #f0f0f0;       /* Change background on hover */
+    transform: translateY(-5px);     /* Slight lift effect */
+}
+
+li.blog-box a:hover {
+    color: #0056b3;                   /* Change link color on hover */
+}
+
+/* Back to Dashboard Button */
+a[href*='dashboard'] {
+    display: inline-block;             /* Make it block level */
+    text-align: center;                /* Center text */
+    margin-top: 20px;                 /* Space above */
+    padding: 10px 20px;               /* Padding inside the button */
+    background-color: #007bff;        /* Button background color */
+    color: white;                      /* Button text color */
+    text-decoration: none;             /* Remove underline */
+    border-radius: 5px;               /* Rounded corners */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
+}
+
+/* Hover effect for the button */
+a[href*='dashboard']:hover {
+    background-color: #0056b3;       /* Darker button on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    ul.blog-list {
+        flex-direction: column;        /* Stack items vertically on small screens */
+        align-items: center;           /* Center the items */
+    }
+
+    li.blog-box {
+        flex-basis: 100%;             /* Make each item take the full width */
+        max-width: 100%;              /* Prevent exceeding the container */
+    }
+
+    body {
+        padding: 10px;                /* Less padding for smaller screens */
+    }
+
+    h1 {
+        font-size: 2rem;              /* Smaller title size on mobile */
+    }
+
+    li.blog-box {
+        padding: 10px;                /* Less padding for items */
+    }
+
+    li.blog-box a {
+        font-size: 1.1rem;            /* Smaller font size for links */
+    }
+
+    a[href*='dashboard'] {
+        width: 100%;                  /* Full width button */
+        padding: 12px;                /* Adjust padding */
+    }
+}
+
+.list {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    background-color: #a259ab; /* Primary button color */
+    border-radius: 25px;
+    margin-left: 10px;
+    margin-top: 50px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for additional button */
+.list:hover {
+    background-color: #3c0034; /* Darker on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Soft shadow */
+}

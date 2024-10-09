@@ -1,0 +1,131 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ blog.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/details.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+</head>
+<body>
+    <a href="{% url 'header' %}" class="home-icon" style="position: absolute; top: 10px; left: 10px; text-decoration: none; color: black;">
+        <i class="fas fa-home" style="font-size: 24px;"></i> <!-- Home icon -->
+    </a>
+    
+    <h1>{{ blog.title }}</h1>
+
+    {% if blog.image %}
+        <img src="{{ blog.image.url }}" alt="Blog Image" style="max-width:55%; height:auto;  margin-top: 30px; margin-bottom: 35px;">
+    {% endif %}
+
+    <p style="margin-bottom: 25px; margin-left: 80px; margin-right: 80px; font-family: cursive; text-indent: 100px; word-spacing: 5px;">{{ blog.content }}</p>
+    <a href="#" id="speak-icon" style="margin-left: 10px;">
+        <i class="fas fa-volume-up" style="font-size: 24px;"></i> <!-- Speaker icon -->
+    </a>
+    
+
+    <p><em>By {{ blog.author.username }} on {{ blog.created_at }}</em></p>
+
+<!-- Likes and Dislikes Section -->
+<div class="like-dislike-container">
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" name="like" class="heart-button">
+            <i class="fas fa-heart {% if is_liked %}liked{% endif %}"></i> <!-- Heart icon -->
+            {{ total_likes }}
+        </button>
+    </form>
+
+    <form method="POST" class="dislike-form">
+        {% csrf_token %}
+        <button type="submit" name="dislike" class="heart-button">
+            <i class="fas fa-thumbs-down {% if is_disliked %}disliked{% endif %}"></i> <!-- Thumbs down icon -->
+            {{ total_dislikes }}
+        </button>
+    </form>
+</div>
+
+
+
+  <!-- Star Rating Section -->
+
+
+
+
+    
+    
+
+
+
+    <!-- Comment Section -->
+    <!-- Comment Section -->
+<div class="comments-section">
+    <h2>Comments</h2>
+    <ul class="comments-list">
+        {% for comment in comments %}
+            <li class="comment-item">
+                <p class="comment-text"><strong>{{ comment.author.username }} said:</strong> {{ comment.content }}</p>
+
+                <p class="comment-date"><small>{{ comment.created_at }}</small></p>
+            </li>
+        {% empty %}
+            <p>No comments yet.</p>
+        {% endfor %}
+    </ul>
+
+    <!-- Add a Comment -->
+    <div class="comment-form-container">
+        <form method="POST" class="comment-form">
+            {% csrf_token %}
+            <div class="comment-input-container">
+                <textarea name="content" class="comment-input" placeholder="Write your comment here..." required></textarea>
+                <button type="submit" name="comment" class="submit-button">
+                    <i class="fas fa-arrow-right"></i> <!-- Arrow symbol -->
+                </button>
+            </div>
+        </form>
+    </div>
+    
+</div>
+
+
+    <a href="{% url 'blog_list' %}">Back to Blog List</a>
+
+
+    <script>
+        // Create a new instance of the SpeechSynthesis API
+        const utterance = new SpeechSynthesisUtterance();
+        utterance.text = `{{ blog.content|escapejs }}`; // Use Django's escapejs to avoid issues with special characters
+        
+        // Optional: Set the voice and rate (if needed)
+        utterance.rate = 1; // 1 is normal speed
+        utterance.pitch = 1; // Default pitch
+        utterance.volume = 1; // Volume level (0 to 1)
+    
+        document.getElementById('speak-icon').addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent the default link action
+    
+            // Check if speech synthesis is currently speaking
+            if (window.speechSynthesis.speaking) {
+                // If it is, stop the speech
+                window.speechSynthesis.cancel();
+            } else {
+                // If it's not, speak the text
+                window.speechSynthesis.speak(utterance);
+            }
+        });
+    </script>
+
+
+   
+    
+    
+    
+    
+    
+    
+
+</body>
+</html>
+

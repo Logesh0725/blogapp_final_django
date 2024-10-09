@@ -1,0 +1,63 @@
+{% extends "blog/dashboard.html" %}
+
+{% comment "" %}
+{% extends "blog/dashboard.html" %}
+{% block content %}
+{% load static %}
+<html>
+    <body>
+        <link rel="stylesheet" href="{% static 'css/list.css' %}">
+
+        <h1 style=" text-align: center; margin-left: 300px; font-family: cursive;">Available Blogs</h1>
+        <ul class="blog-list" >
+            {% for blog in blogs %}
+            <li class="blog-box">
+                <a href="{% url 'blog_detail' blog.id %}">
+                    {% if blog.image %}
+                        <img src="{{ blog.image.url }}" alt="{{ blog.title }} Image" class="blog-image">
+                    {% endif %}
+                    <p class="blog-title">{{ blog.title }}</p>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </body>
+
+
+</html>
+{% endblock content %} {% endcomment %}
+
+
+
+
+
+
+
+
+
+
+{% block content %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog List</title>
+    <link rel="stylesheet" href="{% static 'css/list.css' %}">
+</head>
+<body>
+    <h1 style="margin-left: 300px;">Available Blogs </h1>
+    <ul class="blog-list" >
+        {% for blog in blogs %}
+        <li class="blog-box" style="margin-left: 300px;">
+            <a href="{% url 'blog_detail' blog.id %}">
+                {% if blog.image %}
+                    <img src="{{ blog.image.url }}" alt="{{ blog.title }} Image" class="blog-image">
+                {% endif %}
+                <p class="blog-title">{{ blog.title }}</p>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title class="text">Sign Up</title>
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+    <h2 class="text">Sign Up</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Sign Up</button>
+
+
+
+        <p><strong> if already have an account  </strong> <a style="color:cadetblue;"  href="{% url 'login' %}">Login...</a></p>
+
+    </form>
+    
+</body>
+</html>

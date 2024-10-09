@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page with Vertical Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/dash.css' %}">
+</head>
+<body style=" background-image: url(https://wallpapercave.com/wp/wp5513644.png);">
+    
+
+        <!-- Vertical Dashboard -->
+        <nav id="sidebar" class="sidebar" style="height:100%; width: 20%;">
+            <h2 style="margin-top: 10px; margin-left: 0%;">Dashboard</h2>
+            <ul>
+                <li><a href="{% url 'header' %}">Home</a></li>
+                <li><a href="{% url 'create' %}">Create</a></li>
+                <li><a href="{% url 'blog_list' %}">All Blogs</a></li>
+                <li><a href="{% url 'mine' %}">My Blogs</a></li>
+                <li><a href="{% url 'profile' %}">Update Blogs</a></li>
+                <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div id="main-content" >
+            {% block content %}
+            
+            
+            {% endblock content %}
+        </div>
+    </div>
+
+</body>
+</html>

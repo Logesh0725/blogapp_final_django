@@ -1,0 +1,24 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog List</title>
+    <link rel="stylesheet" href="{% static 'css/list.css' %}">
+</head>
+<body>
+    <h1>All Blogs</h1>
+    <ul class="blog-list">
+        {% for blog in blogs %}
+        <li class="blog-box">
+            <a href="{% url 'blog_detail' blog.id %}">
+                {% if blog.image %}
+                    <img src="{{ blog.image.url }}" alt="{{ blog.title }} Image" class="blog-image">
+                {% endif %}
+                <p class="blog-title">{{ blog.title }}</p>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a class="list" href="{% url 'header' %}">Back to Home</a>
+</body>
+</html>

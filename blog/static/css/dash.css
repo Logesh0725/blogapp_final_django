@@ -1,0 +1,183 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1c1c1c; /* Dark background for the body */
+    color: #f1f1f1; /* Light text color */
+    margin: 0;
+    padding: 0;
+}
+
+/* Container styling */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar (Vertical Dashboard) */
+.sidebar {
+    width: 250px;
+    background-color: #3b0933; /* Dark sidebar background */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    position: fixed; /* Sidebar is fixed to the left */
+    top: 0;
+    left: 0;
+    height: 100%; /* Full height of the viewport */
+    transform: translateX(0); /* Initially visible */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%); /* Move sidebar out of view */
+}
+
+.sidebar h2 {
+    color: #ffffff; /* White color for the dashboard heading */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #b8b8b8; /* Lighter text for links */
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #444; /* Slightly lighter background on hover */
+    color: #ffffff; /* White text on hover */
+}
+
+/* Main content area */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #1c1c1c; /* Match background with body */
+    color: #f1f1f1; /* Light text for content */
+    margin-left: 250px; /* To account for the sidebar width */
+    transition: margin-left 0.3s ease; /* Smooth transition when sidebar hides */
+}
+
+/* Adjust when sidebar is hidden */
+.sidebar.hidden + .main-content {
+    margin-left: 0;
+}
+
+
+
+/* Optional styling for buttons or other elements */
+button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+
+    .sidebar.hidden + .main-content {
+        margin-left: 0;
+    }
+}
+
+
+
+ul.blog-list {
+    display: flex;                     /* Use flexbox for horizontal layout */
+    flex-wrap: wrap;                  /* Allow items to wrap onto the next line */
+    justify-content: space-between;   /* Space between items */
+    list-style-type: none;
+    max-width: 1000px;                /* Adjust as needed for max width */
+    width: 100%;
+    padding: 0;
+}
+
+/* Blog Box Styling */
+li.blog-box {
+    background-color: #fff;           /* Background color for the blog box */
+
+    border: 1px solid #ddd;           /* Light border */
+    border-radius: 10px;              /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    margin: 10px;                     /* Space around items */
+    padding: 15px;                    /* Padding inside the box */
+    flex: 1 1 48%;                    /* Allow two items per row with space */
+    min-width: 280px;                 /* Prevent items from getting too small */
+    text-align: center;               /* Center text within the box */
+    overflow: hidden;                 /* Hide overflow content */
+}
+
+.blog-image {
+    max-width: 100%;                  /* Responsive image width */
+    height: auto;                     /* Maintain aspect ratio */
+    border-radius: 5px;               /* Slightly rounded corners for images */
+    margin-bottom: 15px;              /* Space below the image */
+}
+
+/* Blog Title Styling */
+.blog-title {
+    font-size: 22px;                  /* Title font size */
+    color: #34495e;                   /* Title color */
+    margin: 0;                        /* Remove margin */
+}
+
+/* Blog Title Links */
+li.blog-box a {
+    text-decoration: none;             /* Remove underline */
+    color: #007bff;                   /* Link color */
+    font-size: 1.2rem;                /* Link font size */
+    font-weight: bold;                /* Make the link bold */
+    transition: color 0.3s ease;      /* Transition effect for hover */
+}
+
+/* Hover effect for blog items */
+li.blog-box:hover {
+    background-color: #f0f0f0;       /* Change background on hover */
+    transform: translateY(-5px);     /* Slight lift effect */
+}
+
+li.blog-box a:hover {
+    color: #0056b3;                   /* Change link color on hover */
+}
+@media (max-width: 600px) {
+    ul.blog-list {
+        flex-direction: column;        /* Stack items vertically on small screens */
+        align-items: center;           /* Center the items */
+    }
+
+    li.blog-box {
+        flex-basis: 100%;             /* Make each item take the full width */
+        max-width: 100%;              /* Prevent exceeding the container */
+    }
+}

@@ -1,0 +1,100 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1c1c1c;   /* Dark background */
+    color: #f4f4f4;              /* Light text color */
+    padding: 20px;
+    margin: 0;
+}
+
+/* Header Styles */
+h1 {
+    text-align: center;
+    color: #f4f4f4;              /* Light heading color */
+    margin-bottom: 30px;
+}
+
+/* Blog List Styling */
+ul {
+    list-style: none;            /* Remove bullet points */
+    padding: 0;
+}
+
+li {
+    background-color: #2b2b2b;   /* Darker background for list items */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;         /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Soft shadow */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Hover effect for blog items */
+li:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Blog Title and Content */
+li strong {
+    font-size: 20px;
+    color: #5cb85c;              /* Highlight the title with a soft green */
+}
+
+li p {
+    margin-top: 10px;
+    line-height: 1.5;
+    color: #ccc;                 /* Lighter text color for better readability */
+}
+
+/* Form Styling */
+form {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 15px; /* Add space between forms */
+}
+
+input[type="hidden"] {
+    display: none;
+}
+
+/* Input Fields Styling */
+input[type="text"], textarea {
+    width: calc(100% - 20px);    /* Full width minus padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #555;
+    background-color: #333;       /* Dark background for inputs */
+    color: #f4f4f4;                /* Light text color for inputs */
+    border-radius: 5px;           /* Rounded input fields */
+    transition: border-color 0.3s ease-in-out; /* Smooth transition */
+}
+
+input[type="text"]:focus, textarea:focus {
+    border-color: #5cb85c;       /* Green border on focus */
+}
+
+/* Button Styling */
+button {
+    background-color: #5cb85c;    /* Green background for buttons */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;          /* Rounded corners for buttons */
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s;
+}
+
+button:hover {
+    background-color: #4cae4c;   /* Lighter green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Delete Button Specific Styling */
+form[style="display:inline;"] button {
+    background-color: #d9534f;   /* Red color for delete button */
+}
+
+form[style="display:inline;"] button:hover {
+    background-color: #c9302c;   /* Darker red on hover */
+}

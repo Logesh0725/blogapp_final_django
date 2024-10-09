@@ -1,0 +1,150 @@
+/* General Reset for Cross-Browser Consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1c1c1c;  /* Dark background */
+    color: #eaeaea;  /* Light text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #f1f1f1;  /* Light color for headings */
+    margin-bottom: 20px;
+    letter-spacing: 1px;  /* Slightly increased letter spacing for elegance */
+}
+
+/* Form container with dark theme, soft shadows, and rounded corners */
+form {
+    background-color: #2a2a2a;  /* Dark form background */
+    padding: 40px;
+    border-radius: 15px;  /* Softer rounded corners */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);  /* Soft shadow */
+    max-width: 500px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Form fields */
+form p {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1rem;
+    color: #bbbbbb;  /* Light gray for labels */
+}
+
+/* Input fields with dark background and subtle borders */
+input[type="text"], textarea, select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;  /* Softer rounded corners */
+    border: 1px solid #555;  /* Darker border */
+    background-color: #3b3b3b;  /* Dark background for inputs */
+    color: #f1f1f1;  /* Light text */
+    font-size: 1rem;
+    margin-top: 5px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Input focus effect with soft glow */
+input[type="text"]:focus, textarea:focus, select:focus {
+    border-color: #007bff;  /* Blue border on focus */
+    background-color: #444;  /* Slightly darker background */
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);  /* Soft blue glow */
+}
+
+/* Textarea styling */
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Submit Button with modern design */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;  /* Primary button color */
+    color: white;
+    border: none;
+    border-radius: 8px;  /* Softer edges */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Button hover effect */
+button[type="submit"]:hover {
+    background-color: #0056b3;  /* Darker blue on hover */
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);  /* Soft glow on hover */
+}
+
+/* Back to Dashboard link styling */
+a {
+    display: inline-block;
+    text-align: center;
+    color: #007bff;  /* Link color */
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for link */
+a:hover {
+    color: #0056b3;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 600px) {
+    form {
+        padding: 30px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    button[type="submit"] {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
+
+/* Back button styling with dark theme */
+.back {
+    text-decoration: none;
+    justify-content: baseline;
+    color: #fff;
+    padding: 10px 20px;
+    background-color: #9542ad;  /* Primary color */
+    border-radius: 30px;  /* Rounded button */
+    margin-left: 30px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Back button hover effect */
+.back:hover {
+    background-color: #400052;  /* Darker shade on hover */
+    box-shadow: 0 4px 12px rgba(149, 66, 173, 0.4);  /* Soft shadow on hover */
+}
+
+/* Additional styling for text */
+.text {
+    margin-right: 30px;
+    margin-left: 20px;
+    margin-top: 30px;
+}

@@ -1,0 +1,128 @@
+/* General Reset for Cross-Browser Consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling with dark background and centered content */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url(https://wallpapercave.com/wp/wp5513644.png);
+
+    background-color: #1c1c1c;  /* Dark background */
+    color: #eaeaea;  /* Light text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Elegant Heading styling */
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #f1f1f1;
+    margin-bottom: 20px;
+    letter-spacing: 1px; /* Slightly increased spacing for elegance */
+}
+
+/* Form container with dark theme, soft shadows, and rounded corners */
+form {
+    background-color: #2a2a2a; /* Dark container */
+    padding: 40px;
+    border-radius: 15px; /* Softer rounded corners */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6); /* Softer and darker shadow */
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Labels with elegant font styling */
+label {
+    display: block;
+    font-size: 1rem;
+    color: #bbbbbb; /* Softer light color */
+    margin-bottom: 10px;
+    letter-spacing: 0.5px; /* Slight letter spacing for sophistication */
+}
+
+/* Inputs with dark background, subtle borders, and soft focus effect */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 8px; /* More rounded input fields */
+    border: 1px solid #555; /* Dark border */
+    background-color: #3b3b3b; /* Dark input background */
+    color: #f1f1f1; /* Light text */
+    font-size: 1rem;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Highlighting input fields on focus with a soft glow effect */
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #007bff;
+    background-color: #444;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4); /* Soft glow on focus */
+}
+
+/* Submit Button with modern design, hover effects, and smooth transitions */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    margin-top: 10px;
+    color: white;
+    border: none;
+    border-radius: 8px; /* Softer button edges */
+    font-size: 1.1rem; /* Slightly larger text */
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Button Hover Effect with soft shadows and color transition */
+button[type="submit"]:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 16px rgba(0, 123, 255, 0.4); /* Soft glow on hover */
+}
+
+/* Responsive Design for Mobile with reduced padding */
+@media (max-width: 600px) {
+    form {
+        padding: 30px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Additional styling for text and back link */
+.text {
+    margin-right: 30px;
+}
+
+/* Back link button styling */
+.list {
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 24px;
+    background-color: #007bff;
+    border-radius: 25px; /* Rounded button for elegance */
+    margin-left: 10px;
+    margin-top: 200px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for the back link */
+.list:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4); /* Soft shadow on hover */
+}
+
+/* Padding for paragraphs */
+.para {
+    padding-top: 15px;
+}
